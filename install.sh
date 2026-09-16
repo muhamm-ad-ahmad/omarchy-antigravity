@@ -71,7 +71,7 @@ echo -e "${GREEN}[✓] Omarchy default agent set to: gemini (routed to agy)${NC}
 # 7. Add Hyprland floating window rule if not present
 HYPR_CONF="$HOME/.config/hypr/hyprland.lua"
 if [[ -f "$HYPR_CONF" ]]; then
-  if ! grep -q "org\\.omarchy\\.agent" "$HYPR_CONF"; then
+  if ! grep -q 'org.*omarchy.*agent' "$HYPR_CONF"; then
     echo -e "${BLUE}[*] Adding floating window rule to ~/.config/hypr/hyprland.lua...${NC}"
     cat << 'EOF' >> "$HYPR_CONF"
 
