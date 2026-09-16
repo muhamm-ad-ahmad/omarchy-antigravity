@@ -27,7 +27,7 @@ Seamless integration for Google's official **Antigravity CLI (`agy`)** into **[O
 Clone this repository and run the installer:
 
 ```bash
-git clone https://github.com/<your-username>/omarchy-antigravity.git
+git clone https://github.com/muhamm-ad-ahmad/omarchy-antigravity.git
 cd omarchy-antigravity
 ./install.sh
 ```
@@ -35,7 +35,7 @@ cd omarchy-antigravity
 Or install via one-liner:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/<your-username>/omarchy-antigravity/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/muhamm-ad-ahmad/omarchy-antigravity/main/install.sh | bash
 ```
 
 ---
