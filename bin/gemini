@@ -1,0 +1,31 @@
+#!/bin/bash
+# Compatibility wrapper: routes Gemini CLI invocations to Antigravity CLI (agy)
+# Survives all Omarchy updates by residing in ~/.local/bin/
+
+args=()
+while (($#)); do
+  case "$1" in
+    --yolo)
+      args+=(--dangerously-skip-permissions)
+      shift
+      ;;
+    --prompt-interactive)
+      args+=(-i "$2")
+      shift 2
+      ;;
+    *)
+      args+=("$1")
+      shift
+      ;;
+  esac
+done
+
+agy "${args[@]}"
+exit_code=$?
+
+# Refresh usage stats in background after session closes
+if command -v omarchy-agent-usage-agy &>/dev/null; then
+  omarchy-agent-usage-agy &>/dev/null &
+fi
+
+exit $exit_code
